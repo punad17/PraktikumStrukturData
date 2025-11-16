@@ -24,9 +24,9 @@ print("Stack:", stack)
 
 **Penjelasan**
 
-* `append()` itu buat menaruh elemen ke atas tumpukan.
-* 'A', 'B', dan 'C' dimasukin satu per satu ke stack.
-* `print()` cuma buat nunjukkin isi stack sekarang.
+`append()` itu buat menaruh elemen ke atas tumpukan.
+'A', 'B', dan 'C' dimasukin satu per satu ke stack.
+`print()` cuma buat nunjukkin isi stack sekarang.
 
 **Output:**
 
@@ -117,8 +117,8 @@ queue = []
 
 **Penjelasan**
 
-* Ini bikin antrian kosong.
-* Baru nyiapin tempatnya, belum ada isi.
+Ini bikin antrian kosong.
+Baru nyiapin tempatnya, belum ada isi.
 
 ## **Enqueue (Menambah Elemen ke Queue)**
 
@@ -186,8 +186,8 @@ print("isEmpty:", isEmpty)
 
 **Penjelasan**
 
-* Sama kayak stack: `True` kalau kosong.
-* Ini cara cepat buat tau apakah antrian masih ada orangnya atau nggak.
+Sama kayak stack: `True` kalau kosong.
+Ini cara cepat buat tau apakah antrian masih ada orangnya atau nggak.
 
 **Output:**
 
