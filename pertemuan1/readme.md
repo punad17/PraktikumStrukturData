@@ -51,7 +51,6 @@ print("Peek:", topElement)
 Peek: B
 ```
 
----
 
 ## **Mengecek Apakah Stack Kosong**
 
@@ -80,22 +79,15 @@ print("Size:", len(stack))
 Size: 2
 ```
 
----
-
 # **2. Queue (FIFO — First In, First Out)**
 
 *Queue adalah struktur data yang elemen pertama masuk akan menjadi elemen pertama yang keluar.*
-
----
 
 ## **Membuat Queue**
 
 ```python
 queue = []
 ```
-
----
-
 ## **Enqueue (Menambah Elemen ke Queue)**
 
 ```python
@@ -110,9 +102,6 @@ print("Queue:", queue)
 ```
 Queue: ['A', 'B', 'C']
 ```
-
----
-
 ## **Dequeue (Menghapus Elemen Pertama)**
 
 ```python
@@ -128,8 +117,6 @@ Dequeue: A
 Queue: ['B', 'C']
 ```
 
----
-
 ## **Peek (Melihat Elemen Terdepan)**
 
 ```python
@@ -142,9 +129,6 @@ print("Peek:", frontElement)
 ```
 Peek: B
 ```
-
----
-
 ## **Mengecek Apakah Queue Kosong**
 
 ```python
@@ -158,8 +142,6 @@ print("isEmpty:", isEmpty)
 isEmpty: False
 ```
 
----
-
 ## **Ukuran Queue**
 
 ```python
@@ -171,8 +153,4 @@ print("Size:", len(queue))
 ```
 Size: 2
 ```
-
----
-
-Kalau mau ditambah **penjelasan per sintaks**, **poin-poin bullet lebih banyak**, atau gaya seperti dokumen kampus, tinggal bilang!
 
