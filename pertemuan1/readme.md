@@ -1,22 +1,12 @@
-Siap! Berikut **versi README.md yang memakai `#` (pagar) untuk heading dan `*` (bintang) untuk bullet**, sesuai permintaan.
-
-Langsung bisa dipakai di GitHub.
-
----
-
 # **1. Stack (LIFO — Last In, First Out)**
 
 *Stack adalah struktur data yang elemen terakhir masuk akan menjadi elemen pertama yang keluar.*
-
----
 
 ## **Membuat Stack**
 
 ```python
 stack = []
 ```
-
----
 
 ## **Push (Menambah Elemen ke Stack)**
 
@@ -33,8 +23,6 @@ print("Stack:", stack)
 Stack: ['A', 'B', 'C']
 ```
 
----
-
 ## **Pop (Menghapus Elemen Teratas)**
 
 ```python
@@ -49,8 +37,6 @@ print("Stack:", stack)
 Pop: C
 Stack: ['A', 'B']
 ```
-
----
 
 ## **Peek (Melihat Elemen Teratas)**
 
