@@ -62,6 +62,7 @@ def insert_at_last(self, data):
         node = Node(data)
         node_sekarang.next = node
 ```
+- Menambahkan `data` di akhir list.
 - Jika list kosong → langsung isi `head`.  
 - Jika tidak kosong → telusuri sampai node terakhir (`while node_sekarang.next`).  
 - Tambahkan node baru di ujung list.
