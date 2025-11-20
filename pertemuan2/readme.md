@@ -235,12 +235,9 @@ print(LL.length())
 mangga -> 
 1
 ```
-Baik, saya buatkan penjelasan eksekusi program **per baris** dalam format **README.md** agar rapi dan bisa langsung dipakai di GitHub.  
-
----
 
 ```markdown
-# 🧪 Eksekusi Program Linked List
+# 🧪 Penjelasan Eksekusi Program Linked List
 
 ## 📌 Kode Program
 ```python
@@ -401,16 +398,12 @@ mangga ->
 1
 ```
 
-* `LL.print()` → menampilkan isi list (`mangga ->`).  
-* `LL.length()` → menghitung jumlah node (hasilnya `1`).  
+`LL.print()` → menampilkan isi list (`mangga ->`).  
+`LL.length()` → menghitung jumlah node (hasilnya `1`).  
 
----
 
-## ✨ Kesimpulan
+## Kesimpulan
 Program ini menunjukkan bagaimana operasi **insert** dan **remove** bekerja pada **Linked List**.  
 Setiap operasi mengubah arah pointer antar node sehingga list bisa bertambah atau berkurang sesuai instruksi.
 ```
 
----
-
-👉 Dengan format ini, setiap baris eksekusi program dijelaskan secara detail. Mau saya tambahkan **diagram ASCII node dengan panah `->`** untuk memperjelas visualisasi tiap langkah?
