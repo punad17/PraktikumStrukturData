@@ -35,9 +35,9 @@ class Node:
         self.data = data
         self.next = pointer
 ```
-`Node` adalah struktur dasar dari linked list.  
-`data` → menyimpan nilai.  
-`next` → menunjuk ke node berikutnya.  
+*`Node` adalah struktur dasar dari linked list.  
+*`data` → menyimpan nilai.  
+*`next` → menunjuk ke node berikutnya.  
 
 ### Class `LinkedList`
 ```python
@@ -45,8 +45,8 @@ class LinkedList:
     def __init__(self):
         self.head = None
 ```
-`LinkedList` adalah wadah utama.  
-`self.head` menunjuk ke node pertama.  
+*`LinkedList` adalah wadah utama.  
+*`self.head` menunjuk ke node pertama.  
 
 ### Fungsi `insert_at_first`
 ```python
@@ -54,8 +54,8 @@ def insert_at_first(self, data):
     node = Node(data, self.head)
     self.head = node
 ```
-Menambahkan data di awal list.  
-Node baru menunjuk ke head lama, lalu head diganti.  
+*Menambahkan data di awal list.  
+*Node baru menunjuk ke head lama, lalu head diganti.  
 
 ---
 
@@ -72,9 +72,9 @@ def insert_at_last(self, data):
         node = Node(data)
         node_sekarang.next = node
 ```
-Menambahkan data di akhir list.  
-Jika kosong → langsung isi head.  
-jika tidak → telusuri sampai node terakhir, lalu tambahkan node baru.  
+*Menambahkan data di akhir list.  
+*Jika kosong → langsung isi head.  
+*jika tidak → telusuri sampai node terakhir, lalu tambahkan node baru.  
 
 ### Fungsi `insert_at`
 ```python
