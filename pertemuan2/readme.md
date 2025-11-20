@@ -10,6 +10,12 @@ Fitur yang tersedia meliputi:
 * Menampilkan isi list
 * Menghitung panjang list
 
+# Penjelasan Class di Python
+
+##  Apa itu Class?
+**Class** adalah blueprint atau kerangka untuk membuat objek.
+Class mendefinisikan **atribut (variabel)** dan **method (fungsi)** yang dimiliki oleh objek.
+Dengan class, kita bisa membuat banyak objek dengan struktur dan perilaku yang sama.
 
 ## Kelas `Node`
 ```python
