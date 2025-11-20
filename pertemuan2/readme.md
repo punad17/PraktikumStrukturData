@@ -1,14 +1,15 @@
 implementasi **Linked List** sederhana menggunakan bahasa **Python**.  
 Fitur yang tersedia meliputi:
 
-* Menambahkan data di awal list
-* Menambahkan data di akhir list
-* Menambahkan data di posisi tertentu
-* Menghapus data di awal list
-* Menghapus data di akhir list
-* Menghapus data di posisi tertentu
-* Menampilkan isi list
-* Menghitung panjang list
+## Fitur
+* Menambahkan data di awal list (`insert_at_first`)  
+* Menambahkan data di akhir list (`insert_at_last`)  
+* Menambahkan data di posisi tertentu (`insert_at`)  
+* Menghapus data di awal list (`remove_first`)  
+* Menghapus data di akhir list (`remove_last`)  
+* Menghapus data di posisi tertentu (`remove_at`)  
+* Menampilkan isi list (`print`)  
+* Menghitung panjang list (`length`)  
 
 # Penjelasan Class di Python
 
@@ -17,28 +18,35 @@ Fitur yang tersedia meliputi:
 Class mendefinisikan **atribut (variabel)** dan **method (fungsi)** yang dimiliki oleh objek.
 Dengan class, kita bisa membuat banyak objek dengan struktur dan perilaku yang sama.
 
-## Kelas `Node`
+```markdown
+# Linked List Project (Python)
+
+##  Deskripsi
+Proyek ini berisi implementasi **Linked List** sederhana menggunakan bahasa **Python**.  
+Linked List adalah struktur data linear yang terdiri dari node-node, di mana setiap node menyimpan data dan pointer ke node berikutnya.  
+
+
+## Penjelasan Persintaks
+
+### Class `Node`
 ```python
 class Node:
     def __init__(self, data=None, pointer=None):
         self.data = data
         self.next = pointer
 ```
-- `Node` adalah struktur dasar dari **linked list**.  
-- `data` menyimpan nilai (misalnya `"apel"`, `"jeruk"`).  
-- `next` (atau `pointer`) menunjuk ke node berikutnya.  
-- Jadi setiap node punya **isi data** dan **alamat node selanjutnya**.
+`Node` adalah struktur dasar dari linked list.  
+`data` → menyimpan nilai.  
+`next` → menunjuk ke node berikutnya.  
 
----
-
-##  Kelas `LinkedList`
+### Class `LinkedList`
 ```python
 class LinkedList:
     def __init__(self):
         self.head = None
 ```
-- `LinkedList` adalah wadah utama.  
-- `self.head` menunjuk ke node pertama. Jika kosong, nilainya `None`.
+`LinkedList` adalah wadah utama.  
+`self.head` menunjuk ke node pertama.  
 
 ### Fungsi `insert_at_first`
 ```python
@@ -46,11 +54,12 @@ def insert_at_first(self, data):
     node = Node(data, self.head)
     self.head = node
 ```
-- Menambahkan `data` di awal list.  
-- `next` dari node baru menunjuk ke `head` lama.  
-- `head` diganti dengan node baru → data masuk di **depan list**.
+Menambahkan data di awal list.  
+Node baru menunjuk ke head lama, lalu head diganti.  
 
-###  Fungsi `insert_at_last`
+---
+
+### Fungsi `insert_at_last`
 ```python
 def insert_at_last(self, data):
     if self.head is None:
@@ -59,37 +68,39 @@ def insert_at_last(self, data):
         node_sekarang = self.head
         while node_sekarang.next:
             node_sekarang = node_sekarang.next
+
         node = Node(data)
         node_sekarang.next = node
 ```
-- Menambahkan `data` di akhir list.
-- Jika list kosong → langsung isi `head`.  
-- Jika tidak kosong → telusuri sampai node terakhir (`while node_sekarang.next`).  
-- Tambahkan node baru di ujung list.
-
+Menambahkan data di akhir list.  
+Jika kosong → langsung isi head.  
+jika tidak → telusuri sampai node terakhir, lalu tambahkan node baru.  
 
 ### Fungsi `insert_at`
 ```python
 def insert_at(self, index, data):
     if index < 0 or index > self.length() - 1:
-        print("index invalid!")
+        print("index tidak valid!")
     elif index == 0:
         self.insert_at_first(data)
     else:
-        node_sekarang = self.head
         urutan = 0
+        node_sekarang = self.head
+        
         while urutan < (index - 1):
-            node_sekarang = node_sekarang.next
             urutan += 1
+            node_sekarang = node_sekarang.next
+
         node = Node(data, node_sekarang.next)
         node_sekarang.next = node
 ```
-- Menyisipkan data di posisi tertentu.  
-- Jika `index == 0` → sama seperti `insert_at_first`.  
-- Jika index valid → telusuri sampai node sebelum posisi yang diinginkan.  
-- Buat node baru, lalu sambungkan ke list.
+* Menyisipkan data di posisi tertentu.  
+* Jika index = 0 → sama dengan `insert_at_first`.  
+* Jika valid → telusuri sampai node sebelum posisi yang diinginkan, lalu sisipkan node baru.  
 
-### 📌 Fungsi `remove_first`
+---
+
+### Fungsi `remove_first`
 ```python
 def remove_first(self):
     if self.head is None:
@@ -97,8 +108,10 @@ def remove_first(self):
     else:
         self.head = self.head.next
 ```
-- Menghapus node pertama.  
-- `head` digeser ke node berikutnya.
+* Menghapus node pertama.  
+* Head digeser ke node berikutnya.  
+
+---
 
 ### Fungsi `remove_last`
 ```python
@@ -110,103 +123,232 @@ def remove_last(self):
     else:
         node_sebelumnya = None
         node_sekarang = self.head
+
         while node_sekarang.next:
             node_sebelumnya = node_sekarang
             node_sekarang = node_sekarang.next
+
         node_sebelumnya.next = None
 ```
-- Menghapus `node` terakhir.
-- Jika kosong → tampilkan pesan.  
-- Jika hanya 1 node → hapus dengan `self.head = None`.  
-- Jika lebih dari 1 → telusuri sampai node terakhir, lalu putuskan link dari node sebelumnya.
+* Menghapus node terakhir.  
+* Jika hanya 1 node → head jadi `None`.  
+* Jika lebih dari 1 → telusuri sampai node terakhir, lalu putuskan link dari node sebelumnya.  
+
+---
 
 ### Fungsi `remove_at`
 ```python
 def remove_at(self, index):
     if index < 0 or index >= self.length():
         print("index invalid!")
-    elif self.head is None:
-        print("list kosong")
     elif index == 0:
-        self.head = self.head.next
+        self.remove_first()
     else:
         urutan = 0
         node_sekarang = self.head
-        while urutan < (index - 1):
+
+        while urutan < index - 1:
             node_sekarang = node_sekarang.next
             urutan += 1
+
         node_sekarang.next = node_sekarang.next.next
 ```
-- Menghapus node di posisi tertentu.  
-- Jika index = 0 → sama seperti `remove_first`.  
-- Jika index valid → telusuri sampai node sebelum posisi yang dihapus, lalu sambungkan ke node setelahnya.
+* Menghapus node di posisi tertentu.  
+* Jika index = 0 → sama dengan `remove_first`.  
+* Jika valid → telusuri sampai node sebelum posisi yang dihapus, lalu sambungkan ke node setelahnya.  
 
-###  Fungsi `print`
+---
+
+### Fungsi `print`
 ```python
 def print(self):
     if self.head is None:
         print("data kosong")
     else:
-        text_print = ""
+        text_print = ''
         node_sekarang = self.head
+
         while node_sekarang:
             text_print += str(node_sekarang.data) + " -> "
             node_sekarang = node_sekarang.next
+
         print(text_print)
 ```
-- Menampilkan isi linked list dalam format `"data -> data -> ..."`.  
-- Jika kosong → tampilkan `"data kosong"`.
+* Menampilkan isi linked list dalam format `"data -> data -> ..."`.  
+* Jika kosong → tampilkan `"data kosong"`.  
+
+---
 
 ### Fungsi `length`
 ```python
 def length(self):
     urutan = 0
     data_sekarang = self.head
+
     while data_sekarang:
-        urutan += 1
         data_sekarang = data_sekarang.next
+        urutan += 1
     return urutan
 ```
-- Menghitung jumlah node dalam linked list.  
+* Menghitung jumlah node dalam linked list.  
 
+---
 
-##  Eksekusi Program
+## 🧪 Eksekusi Program
 ```python
 LL = LinkedList()
 
 # insert
 LL.insert_at_first("jeruk")
 LL.insert_at_first("mangga")
-LL.insert_at_first("apel")
-LL.insert_at_last("nanas")
+LL.insert_at_first("manggis")
+LL.insert_at_last("apel")
 LL.insert_at(2, "anggur")
 
 # remove
 LL.remove_first()
 LL.remove_last()
-LL.remove_at(2)
+LL.remove_at(1)
+LL.remove_at(1)
 
 LL.print()
 print(LL.length())
 ```
 
-### Step by step:
+
+## 🔎 Step by Step Proses
+
 1. Insert `"jeruk"` → list: `jeruk`  
 2. Insert `"mangga"` di depan → `mangga -> jeruk`  
-3. Insert `"apel"` di depan → `apel -> mangga -> jeruk`  
-4. Insert `"nanas"` di belakang → `apel -> mangga -> jeruk -> nanas`  
-5. Insert `"anggur"` di index 2 → `apel -> mangga -> anggur -> jeruk -> nanas`  
+3. Insert `"manggis"` di depan → `manggis -> mangga -> jeruk`  
+4. Insert `"apel"` di belakang → `manggis -> mangga -> jeruk -> apel`  
+5. Insert `"anggur"` di index 2 → `manggis -> mangga -> anggur -> jeruk -> apel`  
 
 **Remove:**
-1. Remove first → `mangga -> anggur -> jeruk -> nanas`  
+1. Remove first → `mangga -> anggur -> jeruk -> apel`  
 2. Remove last → `mangga -> anggur -> jeruk`  
-3. Remove at index 2 → `mangga -> anggur`  
+3. Remove at index 1 → `mangga -> jeruk`  
+4. Remove at index 1 → `mangga`  
 
 **Output:**
+```text
+mangga -> 
+1
 ```
-mangga -> anggur -> 
-2
+🔎 Step by Step Proses
+1. Membuat Linked List kosong
+python
+LL = LinkedList()
+Membuat objek LL dari class LinkedList.
+
+head = None → list masih kosong.
+
+2. Insert "jeruk" di depan
+python
+LL.insert_at_first("jeruk")
+Node "jeruk" dibuat dan dijadikan head.
+
+List:
+
+Kode
+jeruk
+3. Insert "mangga" di depan
+python
+LL.insert_at_first("mangga")
+Node "mangga" dibuat.
+
+next dari "mangga" menunjuk ke "jeruk".
+
+head diganti ke "mangga".
+
+List:
+
+Kode
+mangga -> jeruk
+4. Insert "manggis" di depan
+python
+LL.insert_at_first("manggis")
+Node "manggis" dibuat.
+
+next dari "manggis" menunjuk ke "mangga".
+
+head diganti ke "manggis".
+
+List:
+
+Kode
+manggis -> mangga -> jeruk
+5. Insert "apel" di belakang
+python
+LL.insert_at_last("apel")
+Telusuri sampai node terakhir (jeruk).
+
+Tambahkan node "apel" setelah "jeruk".
+
+List:
+
+Kode
+manggis -> mangga -> jeruk -> apel
+6. Insert "anggur" di index 2
+python
+LL.insert_at(2, "anggur")
+Telusuri sampai node index 1 (mangga).
+
+Sisipkan "anggur" setelah "mangga".
+
+List:
+
+Kode
+manggis -> mangga -> anggur -> jeruk -> apel
+🔥 Operasi Remove
+7. Remove first
+python
+LL.remove_first()
+head digeser ke node berikutnya (mangga).
+
+List:
+
+Kode
+mangga -> anggur -> jeruk -> apel
+8. Remove last
+python
+LL.remove_last()
+Telusuri sampai node terakhir (apel).
+
+Putuskan link dari node sebelumnya (jeruk).
+
+List:
+
+Kode
+mangga -> anggur -> jeruk
+9. Remove at index 1
+python
+LL.remove_at(1)
+Telusuri sampai node index 0 (mangga).
+
+Putuskan link ke node index 1 (anggur).
+
+List:
+
+Kode
+mangga -> jeruk
+10. Remove at index 1 lagi
+python
+LL.remove_at(1)
+Telusuri sampai node index 0 (mangga).
+
+Putuskan link ke node index 1 (jeruk).
+
+List:
+
+Kode
+mangga
+📌 Output Akhir
+text
+mangga -> 
+1
+LL.print() → menampilkan isi list (mangga ->).
+
+LL.length() → menghitung jumlah node (hasilnya 1).
+
 ```
-
-
-Jadi, program ini membuat **linked list sederhana** dengan operasi **insert, remove, print, dan length**.  
