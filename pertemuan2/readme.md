@@ -46,7 +46,7 @@ def insert_at_first(self, data):
     node = Node(data, self.head)
     self.head = node
 ```
-- Membuat node baru dengan `data`.  
+- Menambahkan `data` di awal list.  
 - `next` dari node baru menunjuk ke `head` lama.  
 - `head` diganti dengan node baru → data masuk di **depan list**.
 
