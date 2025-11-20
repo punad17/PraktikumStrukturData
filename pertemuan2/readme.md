@@ -235,120 +235,182 @@ print(LL.length())
 mangga -> 
 1
 ```
-🔎 Step by Step Proses
-1. Membuat Linked List kosong
-python
+Baik, saya buatkan penjelasan eksekusi program **per baris** dalam format **README.md** agar rapi dan bisa langsung dipakai di GitHub.  
+
+---
+
+```markdown
+# 🧪 Eksekusi Program Linked List
+
+## 📌 Kode Program
+```python
 LL = LinkedList()
-Membuat objek LL dari class LinkedList.
 
-head = None → list masih kosong.
-
-2. Insert "jeruk" di depan
-python
+# insert
 LL.insert_at_first("jeruk")
-Node "jeruk" dibuat dan dijadikan head.
-
-List:
-
-Kode
-jeruk
-3. Insert "mangga" di depan
-python
 LL.insert_at_first("mangga")
-Node "mangga" dibuat.
-
-next dari "mangga" menunjuk ke "jeruk".
-
-head diganti ke "mangga".
-
-List:
-
-Kode
-mangga -> jeruk
-4. Insert "manggis" di depan
-python
 LL.insert_at_first("manggis")
-Node "manggis" dibuat.
-
-next dari "manggis" menunjuk ke "mangga".
-
-head diganti ke "manggis".
-
-List:
-
-Kode
-manggis -> mangga -> jeruk
-5. Insert "apel" di belakang
-python
 LL.insert_at_last("apel")
-Telusuri sampai node terakhir (jeruk).
-
-Tambahkan node "apel" setelah "jeruk".
-
-List:
-
-Kode
-manggis -> mangga -> jeruk -> apel
-6. Insert "anggur" di index 2
-python
 LL.insert_at(2, "anggur")
-Telusuri sampai node index 1 (mangga).
 
-Sisipkan "anggur" setelah "mangga".
-
-List:
-
-Kode
-manggis -> mangga -> anggur -> jeruk -> apel
-🔥 Operasi Remove
-7. Remove first
-python
+# remove
 LL.remove_first()
-head digeser ke node berikutnya (mangga).
-
-List:
-
-Kode
-mangga -> anggur -> jeruk -> apel
-8. Remove last
-python
 LL.remove_last()
-Telusuri sampai node terakhir (apel).
-
-Putuskan link dari node sebelumnya (jeruk).
-
-List:
-
-Kode
-mangga -> anggur -> jeruk
-9. Remove at index 1
-python
 LL.remove_at(1)
-Telusuri sampai node index 0 (mangga).
+LL.remove_at(1)
 
-Putuskan link ke node index 1 (anggur).
+LL.print()
+print(LL.length())
+```
 
-List:
+---
 
-Kode
+## 🔎 Step by Step Proses
+
+### 1. Membuat Linked List kosong
+```python
+LL = LinkedList()
+```
+* Membuat objek `LL` dari class `LinkedList`.  
+* `head = None` → list masih kosong.  
+
+---
+
+### 2. Insert "jeruk" di depan
+```python
+LL.insert_at_first("jeruk")
+```
+* Node `"jeruk"` dibuat dan dijadikan `head`.  
+* List:  
+```
+jeruk
+```
+
+---
+
+### 3. Insert "mangga" di depan
+```python
+LL.insert_at_first("mangga")
+```
+* Node `"mangga"` dibuat.  
+* `next` dari `"mangga"` menunjuk ke `"jeruk"`.  
+* `head` diganti ke `"mangga"`.  
+* List:  
+```
 mangga -> jeruk
-10. Remove at index 1 lagi
-python
+```
+
+---
+
+### 4. Insert "manggis" di depan
+```python
+LL.insert_at_first("manggis")
+```
+* Node `"manggis"` dibuat.  
+* `next` dari `"manggis"` menunjuk ke `"mangga"`.  
+* `head` diganti ke `"manggis"`.  
+* List:  
+```
+manggis -> mangga -> jeruk
+```
+
+---
+
+### 5. Insert "apel" di belakang
+```python
+LL.insert_at_last("apel")
+```
+* Telusuri sampai node terakhir (`jeruk`).  
+* Tambahkan node `"apel"` setelah `"jeruk"`.  
+* List:  
+```
+manggis -> mangga -> jeruk -> apel
+```
+
+---
+
+### 6. Insert "anggur" di index 2
+```python
+LL.insert_at(2, "anggur")
+```
+* Telusuri sampai node index 1 (`mangga`).  
+* Sisipkan `"anggur"` setelah `"mangga"`.  
+* List:  
+```
+manggis -> mangga -> anggur -> jeruk -> apel
+```
+
+---
+
+## 🔥 Operasi Remove
+
+### 7. Remove first
+```python
+LL.remove_first()
+```
+* `head` digeser ke node berikutnya (`mangga`).  
+* List:  
+```
+mangga -> anggur -> jeruk -> apel
+```
+
+---
+
+### 8. Remove last
+```python
+LL.remove_last()
+```
+* Telusuri sampai node terakhir (`apel`).  
+* Putuskan link dari node sebelumnya (`jeruk`).  
+* List:  
+```
+mangga -> anggur -> jeruk
+```
+
+---
+
+### 9. Remove at index 1
+```python
 LL.remove_at(1)
-Telusuri sampai node index 0 (mangga).
+```
+* Telusuri sampai node index 0 (`mangga`).  
+* Putuskan link ke node index 1 (`anggur`).  
+* List:  
+```
+mangga -> jeruk
+```
 
-Putuskan link ke node index 1 (jeruk).
+---
 
-List:
-
-Kode
+### 10. Remove at index 1 lagi
+```python
+LL.remove_at(1)
+```
+* Telusuri sampai node index 0 (`mangga`).  
+* Putuskan link ke node index 1 (`jeruk`).  
+* List:  
+```
 mangga
-📌 Output Akhir
-text
+```
+
+---
+
+## 📌 Output Akhir
+```text
 mangga -> 
 1
-LL.print() → menampilkan isi list (mangga ->).
-
-LL.length() → menghitung jumlah node (hasilnya 1).
-
 ```
+
+* `LL.print()` → menampilkan isi list (`mangga ->`).  
+* `LL.length()` → menghitung jumlah node (hasilnya `1`).  
+
+---
+
+## ✨ Kesimpulan
+Program ini menunjukkan bagaimana operasi **insert** dan **remove** bekerja pada **Linked List**.  
+Setiap operasi mengubah arah pointer antar node sehingga list bisa bertambah atau berkurang sesuai instruksi.
+```
+
+---
+
+👉 Dengan format ini, setiap baris eksekusi program dijelaskan secara detail. Mau saya tambahkan **diagram ASCII node dengan panah `->`** untuk memperjelas visualisasi tiap langkah?
