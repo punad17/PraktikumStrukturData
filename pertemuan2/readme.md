@@ -115,6 +115,7 @@ def remove_last(self):
             node_sekarang = node_sekarang.next
         node_sebelumnya.next = None
 ```
+- Menghapus `node` terakhir.
 - Jika kosong → tampilkan pesan.  
 - Jika hanya 1 node → hapus dengan `self.head = None`.  
 - Jika lebih dari 1 → telusuri sampai node terakhir, lalu putuskan link dari node sebelumnya.
